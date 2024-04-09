@@ -56,8 +56,6 @@ bool dpad_exclusion;
 uint8_t dpad_pressed_l;
 uint8_t dpad_pressed_r;
 
-bool oled_mode;
-
 /* eeprom */
 // 初期化
 void eeconfig_init_kb(void) {
@@ -72,6 +70,7 @@ void eeconfig_init_kb(void) {
     kw_config.inv_sc = false;
     kw_config.auto_mouse = true;
     kw_config.rgb_layer = false;
+    kw_config.oled_mode = true;
     eeconfig_update_kb(kw_config.raw);
 
     eeconfig_init_user();
@@ -181,7 +180,6 @@ void matrix_init_kb(void) {
     key_timer_l = timer_read();
     key_timer_r = timer_read();
     dpad_exclusion = true;
-    oled_mode = true;
 
     matrix_init_user();
 }
@@ -194,8 +192,8 @@ void pointing_device_init_kb(void){
     scroll_accumulated_l_v = 0;
     scroll_accumulated_r_h = 0;
     scroll_accumulated_r_v = 0;
-    pointing_device_set_cpi_on_side(true,  400 + kw_config.spd_l * 200);
-    pointing_device_set_cpi_on_side(false, 400 + kw_config.spd_r * 200);
+    pointing_device_set_cpi_on_side(true,  1000 + kw_config.spd_l * 250);
+    pointing_device_set_cpi_on_side(false, 1000 + kw_config.spd_r * 250);
     set_auto_mouse_enable(kw_config.auto_mouse);
 
     pointing_device_init_user();
@@ -212,7 +210,7 @@ report_mouse_t pointing_device_task_combined_user(report_mouse_t left_report, re
             if(slow_mode){
                 amp_temp = AMP_SLOW;
             }else{
-                amp_temp = 4.0 + (double)kw_config.spd_l * 3.0;
+                amp_temp = 16.0 + (double)kw_config.spd_l * 3.0;
             }
             switch (kw_config.pd_mode_l){
                 case KEY_INPUT:
@@ -229,7 +227,7 @@ report_mouse_t pointing_device_task_combined_user(report_mouse_t left_report, re
             if(slow_mode){
                 amp_temp = AMP_SLOW;
             }else{
-                amp_temp = 4.0 + (double)kw_config.spd_r * 3.0;
+                amp_temp = 16.0 + (double)kw_config.spd_r * 3.0;
             }
             switch (kw_config.pd_mode_r){
                 case KEY_INPUT:
@@ -554,19 +552,12 @@ void is_slow_mode(bool is_slow_mode){
         pointing_device_set_cpi_on_side(true,  CPI_SLOW);
         pointing_device_set_cpi_on_side(false, CPI_SLOW);
     }else{
-        pointing_device_set_cpi_on_side(true,  400 + kw_config.spd_l * 200);
-        pointing_device_set_cpi_on_side(false, 400 + kw_config.spd_r * 200);
+        pointing_device_set_cpi_on_side(true,  1000 + kw_config.spd_l * 250);
+        pointing_device_set_cpi_on_side(false, 1000 + kw_config.spd_r * 250);
     }
     clear_keyinput();
 }
 
-
-bool get_oled_mode(void){
-    return oled_mode;
-}
-void toggle_oled_mode(void){
-    oled_mode = !oled_mode;
-}
 bool get_dpad_exclusion(void){
     return dpad_exclusion;
 }

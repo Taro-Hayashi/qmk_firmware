@@ -5,9 +5,9 @@
 #include "quantum.h"
 
 // 定数
-// CPI = 400 + spd * 200 / AMP = 4.0 + (double)spd * 3.0
-#define SPD_DEFAULT 5
-#define SPD_OPTION_MAX 15
+// CPI = 1000 + spd * 250 / AMP = 16.0 + (double)spd * 3.0
+#define SPD_DEFAULT 3
+#define SPD_OPTION_MAX 7
 
 // 角度 = angle * 12
 #define ANGLE_DEFAULT_LEFT 8
@@ -58,12 +58,12 @@ enum oledmode{
 typedef union{
     uint32_t raw;
     struct{
-        uint8_t spd_l     :4; // ポインター速度 最大値15
+        uint8_t spd_l     :3; // ポインター速度 最大値7
         uint8_t angle_l   :5; // ポインター角度 最大値59 
         uint8_t pd_mode_l :2; // カーソル移動/スクロールモード/キー入力モード
         bool inv_l        :1; // トラックボール / ジョイスティック左右反転ON/OFF
         
-        uint8_t spd_r     :4; // ポインター速度 最大値15
+        uint8_t spd_r     :3; // ポインター速度 最大値7
         uint8_t angle_r   :5; // ポインター角度 最大値59 
         uint8_t pd_mode_r :2; // カーソル移動/スクロールモード/キー入力モード
         bool inv_r        :1; // トラックボール / ジョイスティック左右反転
@@ -71,6 +71,7 @@ typedef union{
         bool inv_sc     :1; // スクロールの反転ON/OFF
         bool auto_mouse :1; // オートマウスON/OFF
         bool rgb_layer  :1; // RGBレイヤーON/OFF
+        bool oled_mode  :1; // oled表示
     };
 } kw_config_t;
 
@@ -85,9 +86,6 @@ void is_scroll_mode(bool is_force_scrolling); // 一時的モード変更
 void is_cursor_mode(bool is_force_scrolling);
 void is_key_mode(bool is_force_key_input);
 void is_slow_mode(bool is_slow_mode);
-
-bool get_oled_mode(void);
-void toggle_oled_mode(void);
 
 bool get_dpad_exclusion(void);
 void toggle_dpad_exclusion(void);

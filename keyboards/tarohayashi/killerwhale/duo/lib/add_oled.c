@@ -184,7 +184,7 @@ bool oled_task_addedoled(void) {
                     }
                     break;
                 case OLED_MOD:
-                    if(get_oled_mode()){
+                    if(kw_config.oled_mode){
                         oled_write_P(PSTR("SHOW LAYER           "), false);
                     }else{
                         oled_write_P(PSTR("SHOW STATS           "), false);
@@ -237,7 +237,7 @@ bool oled_task_addedoled(void) {
                 break;
         }
     // レイヤー表示処理
-    }else if(get_oled_mode()|| !is_keyboard_master()){
+    }else if(kw_config.oled_mode|| !is_keyboard_master()){
         oled_set_cursor(0, 0);
         cur_layer = get_highest_layer(layer_state);
         if (readPin(GP10)) {
@@ -251,17 +251,17 @@ bool oled_task_addedoled(void) {
         oled_write_P(PSTR("SPD "), false);
         if(get_joystick_attached() == JOYSTICK_LEFT){
             oled_write_P(PSTR(" J:"), false);
-            oled_write_P(get_u16_str(4 + (uint16_t)kw_config.spd_l * 3, ' '), false);
+            oled_write_P(get_u16_str(16 + (uint16_t)kw_config.spd_l * 3, ' '), false);
         }else{
             oled_write_P(PSTR(" L:"), false);
-            oled_write(get_u16_str(400 + (uint16_t)kw_config.spd_l * 200, ' '), false);
+            oled_write(get_u16_str(1000 + (uint16_t)kw_config.spd_l * 250, ' '), false);
         } 
         if(get_joystick_attached() == JOYSTICK_RIGHT){
             oled_write_P(PSTR(" J:"), false);
-            oled_write(get_u16_str(4 + (uint16_t)kw_config.spd_r * 3, ' '), false);
+            oled_write(get_u16_str(16 + (uint16_t)kw_config.spd_r * 3, ' '), false);
         }else{
             oled_write_P(PSTR(" R:"), false);
-            oled_write_P(get_u16_str(400 + (uint16_t)kw_config.spd_r * 200, ' '), false);
+            oled_write_P(get_u16_str(1000 + (uint16_t)kw_config.spd_r * 250, ' '), false);
         }
 
         oled_set_cursor(0, 1);

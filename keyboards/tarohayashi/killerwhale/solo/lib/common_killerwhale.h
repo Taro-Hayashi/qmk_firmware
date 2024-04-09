@@ -59,12 +59,6 @@ typedef union{
         uint8_t oled_mode :2; // OLEDがレイヤー表示/スタッツ表示/オフ
         bool dpad_exclusion  :1; // 十字キー同時押し禁止ON/OFF
         bool rgb_layer  :1; // RGBレイヤーON/OFF
-        /*
-        uint8_t spd     :4; // ポインター速度 最大値15
-        uint8_t angle   :6; // ポインター角度 最大値59 
-        uint8_t pd_mode :2; // カーソル移動/スクロールモード/キー入力モード
-        bool inv        :1; // トラックボール / ジョイスティック左右反転
-        */
     };
 } kw_config_t;
 

@@ -244,7 +244,7 @@ report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
         keycode_down = keymap_key_to_keycode(layer, key_down);      
 
         // 斜めを除外
-        if(dpad_exclusion){
+        if(kw_config.dpad_exclusion){
             if (abs(x_rev) > abs(y_rev)) {
                 y_rev = 0;
             } else {
