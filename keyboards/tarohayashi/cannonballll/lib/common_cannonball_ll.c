@@ -1,7 +1,7 @@
-// Copyright 2021 Hayashi (@w_vwbw)
-// SPDX-License-Identifier: GPL-2.0-or-later
+// Copyright 2025 Hayashi (@w_vwbw)
+// SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "lib/common_cannonball.h"
+#include "lib/common_cannonball_ll.h"
 #include "lib/add_keycodes.h"
 
 cb_config_t cb_config;      // eeprom保存用

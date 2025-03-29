@@ -1,0 +1,126 @@
+{
+  "keyboard_name": "Cannonball LL",
+  "manufacturer": "hayashi",
+  "maintainer": "hayashi",
+  "url": "https://github.com/Taro-Hayashi/Cannonball-LL",
+  "usb": {
+    "vid": "0x8884",
+    "pid": "0x0907",
+    "device_version": "1.0.0"
+  },
+  "processor": "RP2040",
+  "bootloader": "rp2040",
+  "features": {
+    "rgblight": true,
+    "extrakey": true,
+    "midi": true
+  },
+  "bootmagic": {
+    "enabled": true,
+    "matrix": [0, 4]
+  },
+  "diode_direction": "COL2ROW",
+  "encoder": {
+    "enabled": true,
+    "rotary": [
+      {
+        "pin_a": "GP0",
+        "pin_b": "GP1",
+        "resolution": 2
+      },
+      {
+        "pin_a": "GP29",
+        "pin_b": "GP28",
+        "resolution": 2
+      },
+      {
+        "pin_a": "GP27",
+        "pin_b": "GP26",
+        "resolution": 2
+      }
+    ]
+  },
+  "dynamic_keymap": {
+    "layer_count": 6
+  },
+  "mouse_key": {
+    "enabled": true
+  },
+  "layouts": {
+    "LAYOUT": {
+      "layout": [
+        { "matrix": [0, 0], "x": 0, "y": 0 },
+        { "matrix": [0, 1], "x": 0, "y": 0 },
+        { "matrix": [0, 2], "x": 0, "y": 0 },
+        { "matrix": [0, 3], "x": 0, "y": 0 },
+
+        { "matrix": [1, 4], "x": 0, "y": 0 },
+        { "matrix": [0, 4], "x": 0, "y": 0 },
+        { "matrix": [1, 5], "x": 0, "y": 0 },
+        { "matrix": [0, 5], "x": 0, "y": 0 },
+
+        { "matrix": [0, 6], "x": 0, "y": 0 },
+        { "matrix": [0, 7], "x": 0, "y": 0 },
+        { "matrix": [0, 8], "x": 0, "y": 0 },
+        { "matrix": [0, 9], "x": 0, "y": 0 },
+
+        { "matrix": [1, 0], "x": 0, "y": 0 },
+        { "matrix": [1, 1], "x": 0, "y": 0 },
+        { "matrix": [1, 2], "x": 0, "y": 0 },
+        { "matrix": [1, 3], "x": 0, "y": 0 },
+
+        { "matrix": [0, 10], "x": 0, "y": 0 },
+        { "matrix": [0, 11], "x": 0, "y": 0 },
+
+        { "matrix": [1, 6], "x": 0, "y": 0 },
+        { "matrix": [1, 8], "x": 0, "y": 0 },
+        { "matrix": [1, 7], "x": 0, "y": 0 },
+
+        { "matrix": [1, 9], "x": 0, "y": 0 },
+        { "matrix": [1, 11], "x": 0, "y": 0 },
+        { "matrix": [1, 10], "x": 0, "y": 0 },
+
+        { "matrix": [0, 12], "x": 0, "y": 0 },
+        { "matrix": [0, 13], "x": 0, "y": 0 },
+        { "matrix": [0, 14], "x": 0, "y": 0 },
+        { "matrix": [1, 14], "x": 0, "y": 0 },
+
+        { "matrix": [1, 13], "x": 0, "y": 0 },
+        { "matrix": [1, 12], "x": 0, "y": 0 },
+        { "matrix": [0, 15], "x": 0, "y": 0 },
+
+        { "matrix": [0, 16], "x": 0, "y": 0 },
+
+        { "matrix": [1, 17], "x": 0, "y": 0 }
+      ]
+    }
+  },
+  "ws2812": {
+    "pin": "GP8",
+    "driver": "vendor"
+  },
+  "rgblight": {
+    "led_count": 15,
+    "hue_steps": 4,
+    "saturation_steps": 4,
+    "brightness_steps": 8,
+    "max_brightness": 255,
+    "animations": {
+      "alternating": true,
+      "breathing": true,
+      "christmas": true,
+      "knight": true,
+      "rainbow_mood": true,
+      "rainbow_swirl": true,
+      "rgb_test": true,
+      "snake": true,
+      "static_gradient": true,
+      "twinkle": true
+    },
+    "sleep": false,
+    "layers": {
+      "enabled": true,
+      "max": 6
+    }
+  }
+}
