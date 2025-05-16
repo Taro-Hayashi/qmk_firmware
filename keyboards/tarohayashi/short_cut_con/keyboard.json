@@ -1,0 +1,41 @@
+{
+  "keyboard_name": "Short cut con",
+  "manufacturer": "hayashi",
+  "maintainer": "hayashi",
+  "url": "https://github.com/Taro-Hayashi/shortcutcon",
+  "usb": {
+    "vid": "0x8884",
+    "pid": "0x0909",
+    "device_version": "1.0.0"
+  },
+  "processor": "RP2040",
+  "bootloader": "rp2040",
+  "features": {
+    "extrakey": true,
+    "midi": true
+  },
+  "matrix_pins": {
+    "direct": [["GP12", "GP11", "GP20", "GP19", "GP18", "GP16"]]
+  },
+  "bootmagic": {
+    "enabled": true
+  },
+  "dynamic_keymap": {
+    "layer_count": 6
+  },
+  "mouse_key": {
+    "enabled": true
+  },
+  "layouts": {
+    "LAYOUT": {
+      "layout": [
+        { "label": "1", "matrix": [0, 0], "x": 0, "y": 4 },
+        { "label": "2", "matrix": [0, 1], "x": 0, "y": 3 },
+        { "label": "3", "matrix": [0, 2], "x": 0, "y": 2 },
+        { "label": "4", "matrix": [0, 3], "x": 0, "y": 1 },
+        { "label": "5", "matrix": [0, 4], "x": 0, "y": 0 },
+        { "label": "5", "matrix": [0, 5], "x": 0, "y": 0 }
+      ]
+    }
+  }
+}
