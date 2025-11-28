@@ -113,7 +113,7 @@
     "default": {
       "hue": 120,
       "sat": 120,
-      "val": 120
+      "val": 30
     },
     "sleep": false,
     "layers": {

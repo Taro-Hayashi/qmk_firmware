@@ -6,11 +6,11 @@
 
 // レイヤーごとの発光場所、発光色の設定
 const rgblight_segment_t PROGMEM base_layer[] = RGBLIGHT_LAYER_SEGMENTS( { 0, 0, HSV_YELLOW} );
-const rgblight_segment_t PROGMEM layer1[] = RGBLIGHT_LAYER_SEGMENTS( { 0, 21, HSV_CYAN} );
-const rgblight_segment_t PROGMEM layer2[] = RGBLIGHT_LAYER_SEGMENTS( { 0, 21, HSV_MAGENTA} );
-const rgblight_segment_t PROGMEM layer3[] = RGBLIGHT_LAYER_SEGMENTS( { 0, 21, HSV_WHITE} );
-const rgblight_segment_t PROGMEM layer4[] = RGBLIGHT_LAYER_SEGMENTS( { 0, 21, HSV_BLUE} );
-const rgblight_segment_t PROGMEM layer5[] = RGBLIGHT_LAYER_SEGMENTS( { 0, 21, HSV_GREEN} );
+const rgblight_segment_t PROGMEM layer1[] = RGBLIGHT_LAYER_SEGMENTS( { 0, 22, HSV_CYAN} );
+const rgblight_segment_t PROGMEM layer2[] = RGBLIGHT_LAYER_SEGMENTS( { 0, 22, HSV_MAGENTA} );
+const rgblight_segment_t PROGMEM layer3[] = RGBLIGHT_LAYER_SEGMENTS( { 0, 22, HSV_WHITE} );
+const rgblight_segment_t PROGMEM layer4[] = RGBLIGHT_LAYER_SEGMENTS( { 0, 22, HSV_BLUE} );
+const rgblight_segment_t PROGMEM layer5[] = RGBLIGHT_LAYER_SEGMENTS( { 0, 22, HSV_GREEN} );
 
 // レイヤーごとの発光方法の指定
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
