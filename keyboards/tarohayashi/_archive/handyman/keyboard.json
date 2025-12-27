@@ -16,7 +16,8 @@
     "midi": true
   },
   "bootmagic": {
-    "enabled": true
+    "enabled": false,
+    "matrix": [2, 2]
   },
   "matrix_pins": {
     "cols": ["F4", "F5", "F6", "F7", "B1"],

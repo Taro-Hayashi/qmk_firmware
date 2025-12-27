@@ -33,37 +33,37 @@ bool oled_task_addedoled(void) {
         if(timer_elapsed(interrupted_time) < INTERRUPT_TIME){
             oled_set_cursor(0, 3);
             switch (interrupt_type){
-                case RGB_HUI:
+                case UG_HUEU:
                     oled_write_P(PSTR("INCREASE HUE         "), false);
                     break;
-                case RGB_HUD:
+                case UG_HUED:
                     oled_write_P(PSTR("DECREASE HUE         "), false);
                     break;
-                case RGB_SAI:
+                case UG_SATU:
                     oled_write_P(PSTR("INCREASE SATURATION  "), false);
                     break;
-                case RGB_SAD:
+                case UG_SATD:
                     oled_write_P(PSTR("DECREASE SATURATION  "), false);
                     break;
-                case RGB_VAI:
+                case UG_VALU:
                     oled_write_P(PSTR("INCREASE VALUE       "), false);
                     break;
-                case RGB_VAD:
+                case UG_VALD:
                     oled_write_P(PSTR("DECREASE VALUE       "), false);
                     break;
-                case RGB_SPI:
+                case UG_SPDU:
                     oled_write_P(PSTR("INCREASE LIGHT SPEED "), false);
                     break;
-                case RGB_SPD:
+                case UG_SPDD:
                     oled_write_P(PSTR("DECREASE LIGHT SPEED "), false);
                     break;
-                case RGB_MOD:
+                case UG_NEXT:
                     oled_write_P(PSTR("NEXT LIGHT PATTERN   "), false);
                     break;
-                case RGB_RMOD:
+                case UG_PREV:
                     oled_write_P(PSTR("PREV LIGHT PATTERN   "), false);
                     break;
-                case RGB_TOG:
+                case UG_TOGG:
                     if(rgblight_is_enabled()){
                         oled_write_P(PSTR("RGB ON               "), false);
                     }else{

@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // 背面ボタン
         KC_5, KC_6, KC_7,
         // スライドスイッチ
-        MO(5),
+        KC_8,
         // センタープッシュ（無効）
         XXXXXXX
     ),

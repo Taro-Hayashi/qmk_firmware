@@ -484,12 +484,12 @@ bool process_record_addedkeycodes(uint16_t keycode, keyrecord_t *record) {
         // BTN1 SLOW
         case QK_USER_9:
             if (record->event.pressed) {
-                register_code(KC_BTN1);
+                register_code(MS_BTN1);
                 is_slow_mode(true);
                 oled_tempch(record->event.pressed, keycode);
             } else {
                 is_slow_mode(false);
-                unregister_code(KC_BTN1);
+                unregister_code(MS_BTN1);
                 oled_tempch(record->event.pressed, keycode);
             }
             return false;
@@ -497,13 +497,13 @@ bool process_record_addedkeycodes(uint16_t keycode, keyrecord_t *record) {
         // BTN2 SLOW
         case QK_USER_10:
             if (record->event.pressed) {
-                register_code(KC_BTN2);
+                register_code(MS_BTN2);
                 is_slow_mode(true);
                 oled_interrupt(QK_USER_4);
                 oled_tempch(record->event.pressed, keycode);
             } else {
                 is_slow_mode(false);
-                unregister_code(KC_BTN2);
+                unregister_code(MS_BTN2);
                 oled_tempch(record->event.pressed, keycode);
             }
             return false;
@@ -511,12 +511,12 @@ bool process_record_addedkeycodes(uint16_t keycode, keyrecord_t *record) {
         // BTN3 SLOW
         case QK_USER_11:
             if (record->event.pressed) {
-                register_code(KC_BTN3);
+                register_code(MS_BTN3);
                 is_slow_mode(true);
                 oled_tempch(record->event.pressed, keycode);
             } else {
                 is_slow_mode(false);
-                unregister_code(KC_BTN3);
+                unregister_code(MS_BTN3);
                 oled_tempch(record->event.pressed, keycode);
             }
             return false;

@@ -1,7 +1,6 @@
 // Copyright 2021 Hayashi (@w_vwbw)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-uint16_t startup_timer;
 #include "lib/add_keycodes.h"
 #include "os_detection.h"
 #include "lib/common_undertow.h"

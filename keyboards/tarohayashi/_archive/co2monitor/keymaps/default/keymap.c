@@ -3,6 +3,7 @@
 
 #include QMK_KEYBOARD_H
 #include "analog.h"
+#include <math.h>
 
 
 // CO2濃度警告の閾値
@@ -98,7 +99,7 @@ bool oled_task_user(void) {
         count = count % COUNTMAX;
         val[count] = analogReadPin(F7);
         count++;
-        count_timer = timer_read();    
+        count_timer = timer_read();
     }
 
     if (timer_elapsed(oled_timer) > SPAN * 1000){
@@ -226,7 +227,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                     val[i] = 0;
                 }
                 oled_timer = timer_read();
-                count_timer = timer_read(); 
+                count_timer = timer_read();
                 oled_clear();
             }
         }

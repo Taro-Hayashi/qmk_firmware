@@ -6,9 +6,6 @@
 #define RGBLIGHT_LAYERS_RETAIN_VAL
 #define RGBLIGHT_DEFAULT_VAL 30
 
-#define MATRIX_ROWS 2
-#define MATRIX_COLS 18
-
 #define SPI_DRIVER SPID1
 #define SPI_SCK_PIN     GP10
 #define SPI_MOSI_PIN    GP11

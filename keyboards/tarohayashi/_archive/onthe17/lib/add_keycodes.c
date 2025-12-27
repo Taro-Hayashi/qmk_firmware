@@ -212,31 +212,31 @@ bool process_record_addedkeycodes(uint16_t keycode, keyrecord_t *record) {
             break;
         case BTN1_SLOW:
             if (record->event.pressed) {
-                register_code(KC_BTN1);
+                register_code(MS_BTN1);
                 is_scroll_mode(true);
             } else {
                 is_scroll_mode(false);
-                unregister_code(KC_BTN1);
+                unregister_code(MS_BTN1);
             }
             return false;
             break;
         case BTN2_SLOW:
             if (record->event.pressed) {
-                register_code(KC_BTN2);
+                register_code(MS_BTN2);
                 is_scroll_mode(true);
             } else {
                 is_scroll_mode(false);
-                unregister_code(KC_BTN2);
+                unregister_code(MS_BTN2);
             }
             return false;
             break;
         case BTN3_SLOW:
           if (record->event.pressed) {
-                register_code(KC_BTN3);
+                register_code(MS_BTN3);
                 is_scroll_mode(true);
             } else {
                 is_scroll_mode(false);
-                unregister_code(KC_BTN3);
+                unregister_code(MS_BTN3);
             }
             return false;
             break;

@@ -21,8 +21,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [BASE] =   {
-      ENCODER_CCW_CW(SC_UP, SC_DOWN),
-      ENCODER_CCW_CW(KC_WH_U, KC_WH_D),
-      ENCODER_CCW_CW(KC_WH_L, KC_WH_R)
+      ENCODER_CCW_CW(KC_1, KC_2),
+      ENCODER_CCW_CW(KC_3, KC_4),
+      ENCODER_CCW_CW(KC_5, KC_6)
       }
 };

@@ -1,0 +1,31 @@
+{
+  "keyboard_name": "THQWGD001",
+  "manufacturer": "hayashi",
+  "maintainer": "hayashi",
+  "url": "https://github.com/Taro-Hayashi/THQWGD001",
+  "usb": {
+    "vid": "0x8884",
+    "pid": "0x0909",
+    "device_version": "1.0.0"
+  },
+  "processor": "atmega32u4",
+  "bootloader": "caterina",
+  "matrix_pins": {
+    "direct": [["D5"]]
+  },
+  "encoder": {
+    "enabled": true,
+    "rotary": [
+      {
+        "pin_a": "D4",
+        "pin_b": "D3",
+        "resolution": 4
+      }
+    ]
+  },
+  "layouts": {
+    "LAYOUT": {
+      "layout": [{ "matrix": [0, 0], "x": 0, "y": 0 }]
+    }
+  }
+}

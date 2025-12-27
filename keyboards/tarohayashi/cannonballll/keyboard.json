@@ -20,6 +20,10 @@
     "matrix": [0, 4]
   },
   "diode_direction": "COL2ROW",
+  "matrix_size": {
+    "cols": 18,
+    "rows": 2
+  },
   "encoder": {
     "enabled": true,
     "rotary": [

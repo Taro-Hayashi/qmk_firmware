@@ -19,11 +19,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // AUTO MOUSE
     [1] = LAYOUT(
         // Side0
-        KC_MS_BTN1, KC_MS_BTN2,
+        MS_BTN1, MS_BTN2,
         _______, _______, _______, _______,
         _______,
         // Side1
-        KC_MS_BTN2, KC_MS_BTN1,
+       MS_BTN2, MS_BTN1,
         _______, _______, _______, _______,
         _______
     ),
@@ -111,33 +111,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [0] =   {
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D)
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD)
     },
     [1] =   {
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D)
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD)
     },
     [2] =   {
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D)
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD)
     },
     [3] =   {
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D)
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD)
     },
     [4] =   {
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D)
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD)
     },
     [5] =   {
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D)
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD)
     },
     [6] =   {
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D)
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD)
     },
     [7] =   {
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D)
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD)
     },
     [8] =   {
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D)
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD)
     },
     [9] =   {
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D)
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD)
     }
 };

@@ -1,0 +1,31 @@
+{
+    "keyboard_name": "THQWGD001",
+    "manufacturer": "hayashi",
+    "maintainer": "hayashi",
+    "url": "https://github.com/Taro-Hayashi/THQWGD001",
+    "usb": {
+        "vid": "0x8884",
+        "pid": "0x0906",
+        "device_version": "1.0.0"
+    },
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "matrix_pins": {
+        "direct": [["GP27"]]
+    },
+    "encoder": {
+        "enabled": true,
+        "rotary": [
+            {
+                "pin_a": "GP29",
+                "pin_b": "GP28",
+                "resolution": 4
+            }
+        ]
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [{ "matrix": [0, 0], "x": 0, "y": 0 }]
+        }
+    }
+}

@@ -11,14 +11,14 @@ enum layer_number {
     // 右手用
     RIGHT_BASE, RIGHT_LOWER, RIGHT_UPPER,
     // 自動マウスレイヤー切り替えや設定用のレイヤー
-    UTIL, MOUSE , BALL_SETTINGS, LIGHT_SETTINGS
+    UTIL, MOUSE , BALL_SETTINGS, MISC
 };
 
 // キーマップ
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [LEFT_BASE] = LAYOUT(
         // 天面スイッチ
-        KC_ESC,  KC_1, KC_2,                 KC_3, LT(BALL_SETTINGS, KC_4), LT(LIGHT_SETTINGS, KC_5),
+        KC_ESC,  KC_1, KC_2,                 KC_3, LT(BALL_SETTINGS, KC_4), KC_5,
         KC_TAB,  KC_Q, KC_W,                 KC_E, KC_R,                    KC_T,
         CMD_CTL, KC_A, KC_S, KC_D, KC_F,                    KC_G,
                  LSFT_T(KC_Z), KC_X,                 KC_C, KC_V,                    KC_B,
@@ -27,22 +27,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LNG2, KC_SPACE,
         // 十字キーorジョイスティック                // ジョイスティックスイッチ
         KC_UP, KC_DOWN, KC_LEFT, KC_RIGHT, L_CHMOD,
-        KC_MS_BTN2, KC_MS_BTN1,                  MO(RIGHT_BASE)
+        MS_BTN2, MS_BTN1,                  MO(RIGHT_BASE)
     ),
     [RIGHT_BASE] = LAYOUT(
-        KC_BSPC,    KC_0,       KC_9,            KC_8,            LT(BALL_SETTINGS, KC_7), LT(LIGHT_SETTINGS, KC_6),
+        KC_BSPC,    KC_0,       KC_9,            KC_8,            LT(BALL_SETTINGS, KC_7), KC_6,
         KC_ENT,     KC_P,       KC_O,            KC_I,            KC_U,                 KC_Y,
         KC_RSFT,    KC_SCLN,    LT(MOUSE, KC_L), KC_K,            KC_J,                 KC_H,
                     KC_SLSH,    KC_DOT,          KC_COMM,         KC_M,                 KC_N,
                                 MOD_SCRL,
         KC_SPACE, KC_LNG1,
         KC_LEFT, KC_RIGHT, KC_DOWN, KC_UP,        L_CHMOD,
-        KC_MS_BTN2, KC_MS_BTN1,                  _______
+        MS_BTN2, MS_BTN1,                  _______
     ),
     [MOUSE] = LAYOUT(
         _______, _______, _______, _______, _______,    _______,
         _______, _______, _______, _______, _______,    _______,
-        _______, _______, _______, KC_MS_BTN2, KC_MS_BTN1, MOD_SCRL,
+        _______, _______, _______, MS_BTN2, MS_BTN1, MOD_SCRL,
                  QK_USER_4, _______, _______, _______, _______,
                           MOD_SCRL,
         _______, _______,
@@ -59,35 +59,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,
         XXXXXXX, XXXXXXX,                            XXXXXXX
     ),
-    [LIGHT_SETTINGS] = LAYOUT(
-        XXXXXXX, XXXXXXX, XXXXXXX, UG_NEXT, UG_PREV, _______,
-        XXXXXXX, UG_SPDU, UG_VALU, UG_SATU, UG_HUEU, UG_TOGG,
-        OLED_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                 UG_SPDD, UG_VALD, UG_SATD, UG_HUED, XXXXXXX,
-                          QK_USER_15,
-        RGB_MOD, RGB_MOD,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,
-        XXXXXXX, XXXXXXX,                            XXXXXXX
-    )
+    [MISC] = LAYOUT(
+        _______, _______, _______, _______, _______,    _______,
+        _______, _______, _______, _______, _______,    _______,
+        _______, _______, _______, _______, _______, _______,
+                 _______, _______, _______, _______, _______,
+                 _______,
+        _______, _______,
+        _______, _______, _______, _______,          _______,
+        _______, _______,                            _______
+    ),
 };
 
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [LEFT_BASE] =   {
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D),
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD),
         ENCODER_CCW_CW(REDO, UNDO),
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D),
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D)
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD),
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD)
     },
     [RIGHT_BASE] =   {
         ENCODER_CCW_CW(KC_DEL, KC_BSPC),
         ENCODER_CCW_CW(KC_UP, KC_DOWN),
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D),
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D)
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD),
+        ENCODER_CCW_CW(MS_WHLU, MS_WHLD)
     },
-    [LIGHT_SETTINGS] = {
-        ENCODER_CCW_CW(UG_SPDU, UG_SPDD),
-        ENCODER_CCW_CW(UG_VALU, UG_VALD),
-        ENCODER_CCW_CW(UG_SATU, UG_SATD),
-        ENCODER_CCW_CW(UG_HUEU, UG_HUED)
+    [MISC] =   {
+        ENCODER_CCW_CW(_______, _______),
+        ENCODER_CCW_CW(_______, _______),
+        ENCODER_CCW_CW(_______, _______),
+        ENCODER_CCW_CW(_______, _______)
     }
 };
